@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakshi Datir | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      color: #222;
+      display: flex;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      margin: 20px;
+    }
+
+    .left-panel {
+      flex: 1;
+      padding: 40px 20px;
+      color: #222;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .left-panel img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+    }
+
+    .left-panel img:hover {
+      transform: scale(1.08);
+    }
+
+    .left-panel h1 {
+      font-size: 2.2em;
+      margin: 10px 0 5px;
+      text-align: center;
+      color: #00796b;
+    }
+
+    .left-panel p {
+      font-size: 1em;
+      color: #333;
+      text-align: center;
+    }
+
+    .nav-links {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-size: 1.1rem;
+      width: 100%;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #00796b;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(0, 121, 107, 0.1);
+    }
+
+    .right-panel {
+      flex: 2;
+      overflow-y: scroll;
+      padding: 40px;
+      background: transparent;
+    }
+
+    .section {
+      margin-bottom: 50px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 150, 136, 0.1);
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #00796b;
+      border-bottom: 2px solid #00796b;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      border-left: 3px solid #00796b;
+      padding-left: 20px;
+    }
+
+    .timeline-entry {
+      margin-bottom: 20px;
+    }
+
+    .timeline-entry span {
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    .project-title {
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    .project-desc {
+      font-size: 0.95em;
+      color: #555;
+      margin-left: 10px;
+      display: block;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #009688;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #00796b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    a.button:hover {
+      background: #004d40;
+    }
+
+    a.linkedin {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0077b5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.linkedin:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: #444;
+      padding: 20px 0;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        border-radius: 20px 20px 0 0;
+      }
+
+      .right-panel {
+        padding: 20px;
+      }
+
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="profile2.jpg" alt="Sakshi Datir">
+      <h1>Sakshi Datir</h1>
+      <p>Diploma Student<br>AI & Robotics Enthusiast</p>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>Hello! I’m <strong>Sakshi Datir</strong>, a passionate third-year diploma student in Information Technology at Amrutvahini Polytechnic, Sangamner.</p>
+        <p>I specialize in robotics, real-time AI, embedded systems, and automation using OpenCV, Arduino, and Python. From creating smart GUI apps to servo-based robotics, I love exploring how technology can solve real-world problems.</p>
+        <p>As a quick learner and problem solver, I enjoy teamwork, exploring new innovations, and am fluent in Marathi, Hindi, and English. My dream is to build intelligent systems that simplify human lives.</p>
+      </div>
+
+      <div class="section" id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <span>2023 – SSC</span>
+            <div>Dnyanganga Vidyaniketan, Sangamner,Ahilyanagar,Maharashtra<br><strong>91.40%</strong></div>
+          </div>
+          <div class="timeline-entry">
+            <span>2023–2024</span>
+            <div>Completed Diploma 2nd Year in Information Technology at Amrutvahini Polytechnic, Sangamner</div>
+          </div>
+          <div class="timeline-entry">
+            <span>2024–2025</span>
+            <div>Currently pursuing Diploma 3rd Year in Information Technology</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>C, C++, Java, Python</li>
+          <li>OpenCV, MediaPipe, Real-time AI</li>
+          <li>Arduino, Sensors, Servo Control</li>
+          <li>GUI Development: Tkinter, PyQt5</li>
+          <li>Web Dev: HTML</li>
+          <li>3D Design: Fusion 360</li>
+        </ul>
+      </div>
+
+      <div class="section" id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li><span class="project-title">ArUco Marker Generator</span>
+            <span class="project-desc">Created visual markers using OpenCV for tracking and inventory.</span><br>
+            <a href="Screenshot 2025-07-22 223304.png" target="_blank">
+              <img src="Screenshot 2025-07-22 223304.png" alt="Aruco Marker Preview" style="width: 150px; border-radius: 8px; margin-top: 10px;">
+            </a>
+          </li>
+          <li><span class="project-title">Floating Video with Subtitle via ArUco Marker</span>
+            <span class="project-desc">Displays floating videos aligned with ArUco markers and auto-subtitles using OpenCV.</span><br>
+            <a href="floatingvideo.png" target="_blank">
+              <img src="floatingvideo.png" alt="Floating Video Preview" style="width: 150px; border-radius: 8px; margin-top: 10px;">
+            </a>
+          </li>
+          <li><span class="project-title">Object Detection GUI</span>
+            <span class="project-desc">GUI to detect objects and calculate area in real-time webcam feed.</span>
+          </li>
+          <li><span class="project-title">Spider Robot</span>
+            <span class="project-desc">Built a six-legged walking robot using Arduino and servo motors.</span>
+          </li>
+          <li><span class="project-title">Smart Surveillance Car</span>
+            <span class="project-desc">Live video feed surveillance car using Raspberry Pi and Wi-Fi control.</span>
+          </li>
+          <li><span class="project-title">Bionic Hand using OpenCV & Arduino</span>
+            <span class="project-desc">Real-time hand gesture-controlled robotic hand using webcam and servo motors.</span>
+          </li>
+          <li><span class="project-title">Inventory Management System</span>
+            <span class="project-desc">Web-based inventory system using Python Django with barcode/ArUco-based product entry.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:sakshidatir973@gmail.com">sakshidatir973@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> +91 9284497769</p>
+          <p><i class="fas fa-map-marker-alt"></i> Sangamner, Maharashtra</p>
+        </div>
+        <a class="linkedin" href="https://www.linkedin.com/in/sakshi-datir-608122358" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn Profile
+        </a>
+      </div>
+
+      <div class="section" id="resume">
+        <h2>Resume</h2>
+        <a class="button" href="Modern Minimalist CV Resume (1).pdf" download>Download Resume (PDF)</a>
+      </div>
+
+      <footer>
+        &copy; 2025 Sakshi Datir | Built with 💚 Passion & Precision
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
